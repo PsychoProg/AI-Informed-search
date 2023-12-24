@@ -58,14 +58,25 @@ if __name__ == "__main__":
     output_folder = 'outputs'
     os.makedirs(output_folder, exist_ok=True)
 
-    # Solve and save Sudoku boards for each test case
-    for i in range(1, 5):
-        input_filename = f'Test Case/{i}.txt'
-        output_filename = f'outputs/output{i}.txt'
+    input_filename = '1.txt'
+    output_filename = 'outputs.txt'
 
-        board = read_sudoku_from_file(input_filename)
-        if solve_sudoku(board):
-            print(f"Solved Test Case {i}")
-            print_board_to_file(board, output_filename)
-        else:
-            print(f"No solution exists for Test Case {i}")
+    board = read_sudoku_from_file(input_filename)
+    if solve_sudoku(board):
+        print(f"Solved Test Case")
+        print_board_to_file(board, output_filename)
+    else:
+        print(f"No solution exists for Test Case")
+
+
+    # Solve and save Sudoku boards for each test case
+    # for i in range(1, 5):
+    #     input_filename = f'Test Case/{i}.txt'
+    #     output_filename = f'outputs/output{i}.txt'
+
+    #     board = read_sudoku_from_file(input_filename)
+    #     if solve_sudoku(board):
+    #         print(f"Solved Test Case {i}")
+    #         print_board_to_file(board, output_filename)
+    #     else:
+    #         print(f"No solution exists for Test Case {i}")
